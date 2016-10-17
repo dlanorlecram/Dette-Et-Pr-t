@@ -1,0 +1,131 @@
+/*---test-*/
+nav {
+  background-color: blueviolet;
+}
+nav ul li {
+  display: inline;
+}
+
+.fa {
+  margin-left: 10px;
+}
+
+span {
+  margin-left: 4px;
+}
+
+.compta {
+  display: table;
+  height: auto;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.filter {
+  border-bottom: 1px solid grey;
+}
+
+.filter ul {
+  margin-bottom: 0px;
+}
+
+.tools li {
+  display: inline;
+}
+
+.adding:before {
+  content: '\f067';
+}
+
+.changing:before {
+  content: '';
+}
+
+.filter ul li {
+  background-color: white;
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+
+.historique {
+  height: 500px;
+  width: 100%;
+  background-color: white;
+  overflow: scroll;
+}
+
+/*------|Variable|------*/
+/*------|Class Css|------*/
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #FFCC80;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+section {
+  height: 90%;
+}
+
+#loginbox {
+  display: table;
+  margin: 0 auto;
+  padding-top: 120px;
+  height: 100%;
+}
+
+.block {
+  height: 400px;
+  width: 400px;
+  border-radius: 5px;
+  background-color: white;
+  display: inherit;
+  text-align: center;
+}
+
+.connexion {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.Btn {
+  line-height: 40px;
+  margin: 0 auto;
+  height: 40px;
+  width: 180px;
+}
+.Btn h4 {
+  font-size: 20px;
+}
+.Btn p {
+  font-size: 13px;
+}
+
+.sIn {
+  background-color: #F44336;
+}
+
+.sUp {
+  background-color: #43A047;
+}
+
+footer {
+  /*display: inline-block;*/
+  height: 10%;
+}
+footer .mention, footer .contact {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-display: inline-block;
+}
+
+/*# sourceMappingURL=styles.css.map */

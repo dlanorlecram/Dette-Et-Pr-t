@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta author="dlanorlecram">
+    <meta name="Dette et prêt">
+    <title>Dette et prêt Accueil</title>
+    <link href="public/css/styles.css" type="text/css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="public/bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf">
+  </head>
+  <body ng-app>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <ul>
+            <li>logout</li>
+            <li>My count</li>
+          </ul>
+        </nav>
+      </header>
+      <section>
+        <div class="compta" ng-view>
+          <div class="filter">
+            <ul>
+              <li>Mes Prêts</li>
+              <li>Mes Dettes</li>
+              <li>Totaux</li>
+            </ul>
+          </div>
+          <div class="historique"></div>
+          <div class="option">
+            <ul class="tools">
+              <li class="fa fa-plus adding"> <span>add</span></li>
+              <li class="fa fa-filter changing"><span>change</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <footer></footer>
+    </div>
+  </body>
+</html>

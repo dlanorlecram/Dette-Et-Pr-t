@@ -1,0 +1,82 @@
+@import 'accueil.scss';
+//@import '../../public/bower_components/components-font-awesome/scss/font-awesome.scss';
+//@import '../../public/bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf';
+
+/*------|Variable|------*/
+
+$medium: 20px;
+$little: 13px;
+$In: #F44336;
+$Up: #43A047;
+$colorborder: #c0c0c0;
+
+/*------|Class Css|------*/
+html, body{
+    height: 100%;
+    margin: 0;
+    background: #FFCC80;
+}
+.wrapper{
+    height: 100%;
+    width: 100%;
+}
+
+section{
+    height: 90%;
+}
+#loginbox{
+    display: table;
+    margin: 0 auto;
+    padding-top: 120px;
+    height: 100%; 
+}
+
+.block{
+    height: 400px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: white;
+    display: inherit;
+    text-align: center;
+}
+
+.connexion{
+    padding:{
+        top:20px;
+        bottom:20px;
+    }
+    border:{
+        top:1px solid $colorborder;
+        bottom :1px solid $colorborder
+    }
+}
+.Btn{
+    line-height: 40px;
+    margin: 0 auto;
+    height: 40px;
+    width: 180px;
+    h4{
+        font-size: $medium;
+    }
+    p{
+        font-size: $little;
+    }
+}
+.sIn{
+    background-color: $In;
+}
+.sUp{
+    background-color: $Up;
+}
+footer{
+    /*display: inline-block;*/
+    height: 10%;
+    .mention,.contact{
+        margin:{
+            left: 20px;
+            right: 20px;
+            display: inline-block;
+        } 
+    }
+    
+}

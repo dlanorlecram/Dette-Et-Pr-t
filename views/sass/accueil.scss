@@ -1,0 +1,57 @@
+//accueil.scss
+
+/*---test-*/
+nav{
+    background-color: blueviolet;
+    ul{
+        
+        li{
+            display: inline;
+        }
+    }
+}
+.fa{
+    margin-left: 10px;
+}
+span{
+    margin-left: 4px;
+}
+.compta{
+    display: table;
+    height: auto;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.filter{
+    border-bottom: 1px solid grey;
+}
+.filter ul{
+    margin-bottom: 0px;
+}
+.tools li{
+    display: inline;
+}
+.adding:before{
+        content: '\f067';
+    }
+.changing:before{
+        content: '';
+    }
+.filter ul li{
+    background-color: white;
+    display: inline;
+    padding:{
+        left: 10px;
+        right: 10px;
+        top: 5px;
+        bottom: 0px;
+    }
+}
+
+.historique{
+    height: 500px;
+    width: 100%;
+    background-color: white;
+    overflow: scroll;
+}
