@@ -1,9 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic");
 /*---test-*/
-nav {
-  background-color: blueviolet;
+header {
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
 }
-nav ul li {
+
+nav {
+  display: inline-block;
+}
+nav .nav-header {
+  float: left;
+  font-size: 15px;
+}
+nav .nav-header h1 {
+  line-height: 50px;
+  margin: 0;
+}
+nav .count_section {
+  display: block;
+  position: absolute;
+  right: 20px;
+}
+nav .count_section ul li {
   display: inline;
+  font-size: 13px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .fa {
@@ -17,8 +42,11 @@ span {
 .compta {
   display: table;
   height: auto;
-  width: 60%;
-  margin: 0 auto;
+  width: 80%;
+  margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-down: 0;
 }
 
 .filter {
@@ -26,7 +54,17 @@ span {
 }
 
 .filter ul {
+  padding: 0;
   margin-bottom: 0px;
+}
+.filter ul li:first-child {
+  background-color: #f9f9f9;
+  box-shadow: 1px 1px 1px c0c0c0;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+}
+.filter ul li:nth-child(0n+2), .filter ul li:nth-child(0n+3) {
+  background-color: #448AFF;
 }
 
 .tools li {
@@ -51,18 +89,65 @@ span {
 }
 
 .historique {
-  height: 500px;
+  height: 300px;
   width: 100%;
   background-color: white;
-  overflow: scroll;
+}
+.historique table {
+  width: 100%;
+  margin-top: 5px;
+  font-family: 'Lato', sans-serif;
+}
+.historique table th {
+  background-color: black;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+.historique table th:first-child {
+  border-right: 1px solid black;
+}
+.historique table th:nth-child(1n-1) {
+  border-right: 1px solid black;
+}
+.historique table th:last-child {
+  border-right: none;
+}
+.historique table tr {
+  text-align: center;
+}
+.historique table tr td {
+  font-size: 11px;
+  color: #c0c0c0;
+  background-color: azure;
+  border-collapse: collapse;
+}
+.historique .box_item {
+  height: 30px;
+  background-color: aquamarine;
+  padding-left: 20px;
+  padding-rigt: 20px;
+  margin-bottom: 10px;
+}
+.historique .box_item ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.historique .box_item ul li {
+  display: inline;
+  font-size: 11px;
+  color: #c0c0c0;
+  margin: 0px 10px;
 }
 
 /*------|Variable|------*/
 /*------|Class Css|------*/
 html, body {
+  font-family: 'Lato', sans-serif;
   height: 100%;
   margin: 0;
-  background: #FFCC80;
+  background: #FFF;
 }
 
 .wrapper {

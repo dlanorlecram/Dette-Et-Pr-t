@@ -13,10 +13,16 @@
     <div class="wrapper">
       <header>
         <nav>
-          <ul>
-            <li>logout</li>
-            <li>My count</li>
-          </ul>
+          <div class="nav-header">
+            <h1 class="header">App Mes Dettes</h1>
+          </div>
+          <div class="count_section">
+            <ul>
+              <li>Logout</li>
+              <li>My count</li>
+              <li>À propos</li>
+            </ul>
+          </div>
         </nav>
       </header>
       <section>
@@ -28,7 +34,48 @@
               <li>Totaux</li>
             </ul>
           </div>
-          <div class="historique"></div>
+          <div class="historique">
+            <div class="row">
+              <!--table
+              thead
+                  tr(style="font-size: 10px;")
+                      th Qui
+                      th Quand
+                      th Somme dû
+                      th Motif
+              tbody
+                  tr
+                      td Jean Toto
+                      td 20 Mai 2016
+                      td 30 $
+                      td Une pint d'embuscade
+
+                  tr
+                      td Michèle Lefou
+                      td 15 Mai 2015
+                      td 200 $
+                      td Bijoux pour sa femme
+              -->
+              <div class="box_item">
+                <ul>
+                  <li>close</li>
+                  <li>Jean Toto</li>
+                  <li>20 Mai 2016</li>
+                  <li>30 $</li>
+                  <li>Une pint d'embuscade</li>
+                </ul>
+              </div>
+              <div class="box_item">
+                <ul>
+                  <li>close</li>
+                  <li>Michèle Lefou</li>
+                  <li>15 Mai 2015</li>
+                  <li>200 $</li>
+                  <li>Bijoux pour sa femme</li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div class="option">
             <ul class="tools">
               <li class="fa fa-plus adding"> <span>add</span></li>
@@ -37,7 +84,9 @@
           </div>
         </div>
       </section>
-      <footer></footer>
+      <footer>
+        <p>test</p>
+      </footer>
     </div>
   </body>
 </html>

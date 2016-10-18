@@ -1,12 +1,39 @@
 //accueil.scss
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic');
 
 /*---test-*/
+header{
+    padding:{
+        right:20px;
+        left:20px;
+    }
+    background-color: rgba(0,0,0,0.25);
+    color: white;
+}
 nav{
-    background-color: blueviolet;
-    ul{
-        
-        li{
-            display: inline;
+    display: inline-block;
+    .nav-header{
+        float: left;
+        font-size: 15px;
+        h1{
+        line-height: 50px;
+        margin: 0;
+        }
+    }
+    .count_section{
+        display: block;
+        position: absolute;
+        right: 20px;
+        ul{
+            li{
+                display: inline;
+                font-size: 13px;
+                margin:{
+                    left: 5px;
+                    right: 5px;
+                }
+            }
         }
     }
 }
@@ -19,18 +46,37 @@ span{
 .compta{
     display: table;
     height: auto;
-    width: 60%;
-    margin: 0 auto;
+    width: 80%;
+    margin:{
+        top: 60px;
+        right: auto;
+        left: auto;
+        down: 0;
+    }
 }
 
 .filter{
     border-bottom: 1px solid grey;
 }
 .filter ul{
+    padding: 0;
     margin-bottom: 0px;
+    li{
+        &:first-child{
+            background-color: #f9f9f9;
+            box-shadow: 1px 1px 1px c0c0c0;
+            border-top-left-radius: 1px;
+            border-top-right-radius: 1px;
+            }
+        &:nth-child(0n+2),&:nth-child(0n+3){
+            background-color:#448AFF;
+        }
+    }
 }
-.tools li{
+.tools{
+    li{
     display: inline;
+    }
 }
 .adding:before{
         content: '\f067';
@@ -50,8 +96,57 @@ span{
 }
 
 .historique{
-    height: 500px;
+    height: 300px;
     width: 100%;
     background-color: white;
-    overflow: scroll;
+    //overflow: scroll;
+    table{
+        width: 100%;
+        margin-top: 5px;
+        font-family: 'Lato', sans-serif;
+        th{
+            background-color: black;
+            font-size: 10px;
+            color: white;
+            text-transform: uppercase;
+            &:first-child{
+                    border-right: 1px solid black;
+                    }
+            &:nth-child(1n-1){
+                    border-right: 1px solid black;
+                    }
+            &:last-child{
+                    border-right: none;
+                    }
+        }
+        tr{
+            text-align: center;
+            td{
+
+                font-size: 11px;
+                color: #c0c0c0;
+                background-color: azure;
+                border-collapse: collapse;
+            }
+        }
+    }
+
+    .box_item{
+        height: 30px;
+        background-color: aquamarine;
+        padding-left: 20px;
+        padding-rigt: 20px;
+        margin-bottom: 10px;
+        ul{
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            li{
+                display:inline;
+                font-size: 11px;
+                color: #c0c0c0;
+                margin: 0px 10px;
+            }
+        }
+    }
 }

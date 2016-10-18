@@ -12,9 +12,13 @@ html(lang='fr')
         .wrapper
             header
                 nav
-                    ul
-                        li logout
-                        li My count
+                    .nav-header
+                        h1.header App Mes Dettes
+                    .count_section
+                        ul
+                            li Logout
+                            li My count
+                            li À propos
             section
                 .compta(ng-view)
                     .filter
@@ -23,6 +27,40 @@ html(lang='fr')
                             li Mes Dettes
                             li Totaux
                     .historique
+                        .row
+                            //table
+                                thead
+                                    tr(style="font-size: 10px;")
+                                        th Qui
+                                        th Quand
+                                        th Somme dû
+                                        th Motif
+                                tbody
+                                    tr
+                                        td Jean Toto
+                                        td 20 Mai 2016
+                                        td 30 $
+                                        td Une pint d'embuscade
+
+                                    tr
+                                        td Michèle Lefou
+                                        td 15 Mai 2015
+                                        td 200 $
+                                        td Bijoux pour sa femme
+                            .box_item
+                                ul
+                                    li close
+                                    li Jean Toto
+                                    li 20 Mai 2016
+                                    li 30 $
+                                    li Une pint d'embuscade
+                            .box_item
+                                ul
+                                    li close
+                                    li Michèle Lefou
+                                    li 15 Mai 2015
+                                    li 200 $
+                                    li Bijoux pour sa femme
                     .option
                         ul.tools
                             li.fa.fa-plus.adding 
@@ -30,3 +68,4 @@ html(lang='fr')
                             li.fa.fa-filter.changing
                                 span change
             footer
+                p test
