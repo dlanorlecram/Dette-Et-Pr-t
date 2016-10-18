@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic');
 
 /*---test-*/
+body{
+    //background-color: crimson!important;
+    background: linear-gradient(to right, #25c481, #25b7c4)!important;
+}
 header{
     padding:{
         right:20px;
@@ -56,20 +60,31 @@ span{
 }
 
 .filter{
-    border-bottom: 1px solid grey;
+    height: 35px;
+    background-color: yellow;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 .filter ul{
+    height: 100%;
     padding: 0;
     margin-bottom: 0px;
     li{
+        line-height: 35px;
         &:first-child{
-            background-color: #f9f9f9;
-            box-shadow: 1px 1px 1px c0c0c0;
+            //background-color: #f9f9f9;
+            //box-shadow: 1px 1px 1px grey;
             border-top-left-radius: 1px;
             border-top-right-radius: 1px;
             }
         &:nth-child(0n+2),&:nth-child(0n+3){
-            background-color:#448AFF;
+            //background-color:#448AFF;
+        }
+        a{
+            list-style: none;
+            text-decoration: none;
+            color: white;
+            font-size: 13px;
         }
     }
 }
@@ -85,7 +100,7 @@ span{
         content: '';
     }
 .filter ul li{
-    background-color: white;
+    //background-color: white;
     display: inline;
     padding:{
         left: 10px;
@@ -119,14 +134,18 @@ span{
                     border-right: none;
                     }
         }
-        tr{
-            text-align: center;
-            td{
+        thead{
+            a{
 
-                font-size: 11px;
-                color: #c0c0c0;
-                background-color: azure;
-                border-collapse: collapse;
+            }
+            tr{
+                text-align: center;
+                td{
+                    font-size: 11px;
+                    color: #c0c0c0;
+                    background-color: azure;
+                    border-collapse: collapse;
+                }
             }
         }
     }
@@ -149,4 +168,12 @@ span{
             }
         }
     }
+}
+th.test{
+    color: yellow!important;
+}
+.mauvais{color: aqua!important;}
+tbody{
+    overflow-y: scroll;
+    height: 250px;
 }

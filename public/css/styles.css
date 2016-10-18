@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic");
 /*---test-*/
+body {
+  background: linear-gradient(to right, #25c481, #25b7c4) !important;
+}
+
 header {
   padding-right: 20px;
   padding-left: 20px;
@@ -50,21 +54,29 @@ span {
 }
 
 .filter {
-  border-bottom: 1px solid grey;
+  height: 35px;
+  background-color: yellow;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .filter ul {
+  height: 100%;
   padding: 0;
   margin-bottom: 0px;
 }
+.filter ul li {
+  line-height: 35px;
+}
 .filter ul li:first-child {
-  background-color: #f9f9f9;
-  box-shadow: 1px 1px 1px c0c0c0;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
 }
-.filter ul li:nth-child(0n+2), .filter ul li:nth-child(0n+3) {
-  background-color: #448AFF;
+.filter ul li a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
 }
 
 .tools li {
@@ -80,7 +92,6 @@ span {
 }
 
 .filter ul li {
-  background-color: white;
   display: inline;
   padding-left: 10px;
   padding-right: 10px;
@@ -113,10 +124,10 @@ span {
 .historique table th:last-child {
   border-right: none;
 }
-.historique table tr {
+.historique table thead tr {
   text-align: center;
 }
-.historique table tr td {
+.historique table thead tr td {
   font-size: 11px;
   color: #c0c0c0;
   background-color: azure;
@@ -139,6 +150,19 @@ span {
   font-size: 11px;
   color: #c0c0c0;
   margin: 0px 10px;
+}
+
+th.test {
+  color: yellow !important;
+}
+
+.mauvais {
+  color: aqua !important;
+}
+
+tbody {
+  overflow-y: scroll;
+  height: 250px;
 }
 
 /*------|Variable|------*/

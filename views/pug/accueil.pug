@@ -15,29 +15,32 @@ html(lang='fr')
                     .nav-header
                         h1.header App Mes Dettes
                     .count_section
-                        ul
+                        ul.fa.fa-chevron-down
                             li Logout
                             li My count
-                            li À propos
+                            li About it!
             section
                 .compta(ng-view)
                     .filter
                         ul
-                            li Mes Prêts
-                            li Mes Dettes
-                            li Totaux
+                            li
+                                a(href="#prêt") Mes Prêts
+                            li
+                                a(href="#prêt") Mes Dettes
+                            li
+                                a(href="#prêt") Totaux
                     .historique
                         .row
-                            //table
+                            table
                                 thead
                                     tr(style="font-size: 10px;")
-                                        th Qui
+                                        th(class="test") Qui
                                         th Quand
                                         th Somme dû
                                         th Motif
                                 tbody
                                     tr
-                                        td Jean Toto
+                                        td(class="mauvais") Jean Toto
                                         td 20 Mai 2016
                                         td 30 $
                                         td Une pint d'embuscade
@@ -46,15 +49,47 @@ html(lang='fr')
                                         td Michèle Lefou
                                         td 15 Mai 2015
                                         td 200 $
+                                        td Bijoux pour sa
+                                    tr
+                                        td Michèle Lefou
+                                        td 15 Mai 2015
+                                        td 200 $
                                         td Bijoux pour sa femme
-                            .box_item
+                                    tr
+                                        td Michèle Lefou
+                                        td 15 Mai 2015
+                                        td 200 $
+                                        td Bijoux pour sa femme
+                                    tr
+                                        td Michèle Lefou
+                                        td 15 Mai 2015
+                                        td 200 $
+                                        td Bijoux pour sa femme
+                                    tr
+                                        td Michèle Lefou
+                                        td 15 Mai 2015
+                                        td 200 $
+                                        td Bijoux pour sa femme
+                                    tr
+                                        td Michèle Lefou
+                                        td 15 Mai 2015
+                                        td 200 $
+                                        td Bijoux pour sa femme
+
+                                    tr
+                                        td Michèle Lefou
+                                        td 15 Mai 2015
+                                        td 200 $
+                                        td Bijoux pour sa femme
+                                tfoot
+                            //.box_item
                                 ul
                                     li close
                                     li Jean Toto
                                     li 20 Mai 2016
                                     li 30 $
                                     li Une pint d'embuscade
-                            .box_item
+                            //.box_item
                                 ul
                                     li close
                                     li Michèle Lefou
@@ -67,5 +102,3 @@ html(lang='fr')
                                 span add
                             li.fa.fa-filter.changing
                                 span change
-            footer
-                p test
