@@ -6,109 +6,120 @@ html(lang='fr')
         meta( name='Dette et prêt' )
         title Dette et prêt Accueil
         link( href='public/css/styles.css', type='text/css', rel='stylesheet')
-        link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
+        //link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
         link( href='public/bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf')
-    body(ng-app)
+        script(src='public/bower_components/angular/angular.js')
+        script(src='public/bower_components/angular-route/angular-route.js')
+        script(src='public/js/myapp.js')
+        script(src='public/js/config.js')
+        //script(type='text/javascript')
+            console.log("test");
+
+    body(ng-app="myApp")
         .wrapper
             header
                 nav
                     .nav-header
-                        h1.header App Mes Dettes
+                        h1.header MyApp
                     .count_section
                         ul.fa.fa-chevron-down
                             li Logout
                             li My account
                             li About it!
             section
-                .compta(ng-view)
+                .compta
                     .filter
                         ul
                             li
-                                a(href="#prêt") Mes Prêts
+                                a(href="") Mes Prêts
                             li
-                                a(href="#prêt") Mes Dettes
+                                a(href="#dettes") Mes Dettes
                             li
-                                a(href="#prêt") Totaux
+                                a(href="#totaux") Totaux
                     .historique
-                        .row
-                            table
+                        .row(ng-view)
+                            //table(ng-controller='userCtrl')
                                 thead
                                     tr
                                         th Qui
                                         th Quand
                                         th Somme dû
                                         th Motif
-                            .tette
-                              table
-                                  tbody
-                                      tr
+                                        th Groupe
+                                tbody
+                                    tr(ng-repeat="user in users")
+                                      td {{user.Concernes}}
+                                      td {{user.Date}}
+                                      td {{user.Montant}}€
+                                      td {{user.Description}}
+                                      td {{user.usergroup}}
+                                      //tr
                                           td Jean Toto
                                           td 20 Mai 2016
                                           td 30 $
                                           td Une pint d'embuscade
-
-                                      tr
+                                      //tr
                                           td Michèle Lefou
                                           td 15 Mai 2015
                                           td 200 $
                                           td Bijoux pour sa
-                                      tr
+                                      //tr
                                           td Michèle Lefou
                                           td 15 Mai 2015
                                           td 200 $
                                           td Bijoux pour sa femme
-                                      tr
+                                      //tr
                                           td Michèle Lefou
                                           td 15 Mai 2015
                                           td 200 $
                                           td Bijoux pour sa femme
-                                      tr
+                                      //tr
                                           td Michèle Lefou
                                           td 15 Mai 2015
                                           td 200 $
                                           td Bijoux pour sa femme
-                                      tr
+                                      //tr
                                           td Michèle Lefou
                                           td 15 Mai 2015
                                           td 200 $
                                           td Bijoux pour sa femme
-                                      tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa femme
-
-                                      tr
+                                       //tr
                                           td Michèle Lefou
                                           td 15 Mai 2015
                                           td 200 $
                                           td Bijoux pour sa femme
 
-                                      tr
+                                      //tr
                                           td Michèle Lefou
                                           td 15 Mai 2015
                                           td 200 $
                                           td Bijoux pour sa femme
 
-                                      tr
+                                      //tr
                                           td Michèle Lefou
                                           td 15 Mai 2015
                                           td 200 $
                                           td Bijoux pour sa femme
-                            //.box_item
-                                ul
-                                    li close
-                                    li Jean Toto
-                                    li 20 Mai 2016
-                                    li 30 $
-                                    li Une pint d'embuscade
-                            //.box_item
-                                ul
-                                    li close
-                                    li Michèle Lefou
-                                    li 15 Mai 2015
-                                    li 200 $
-                                    li Bijoux pour sa femme
+
+                                      //tr
+                                          td Michèle Lefou
+                                          td 15 Mai 2015
+                                          td 200 $
+                                          td Bijoux pour sa femme
+                    //.box_item
+                        ul
+                            li close
+                            li Jean Toto
+                            li 20 Mai 2016
+                            li 30 $
+                            li Une pint d'embuscade
+                    //.box_item
+                        ul
+                            li close
+                            li Michèle Lefou
+                            li 15 Mai 2015
+                            li 200 $
+                            li Bijoux pour sa femme
                     .option
                         ul.tools
                             li.fa.fa-plus.adding

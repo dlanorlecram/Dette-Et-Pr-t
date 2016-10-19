@@ -54,7 +54,7 @@ span {
 }
 
 .filter {
-  width: 24%;
+  width: 236px;
   height: 35px;
   background-color: #FFF;
   border-top-left-radius: 4px;
@@ -83,6 +83,10 @@ span {
   text-decoration: none;
   color: #c0c0c0;
   font-size: 13px;
+}
+.filter ul li a:hover {
+  /*background-color: blue;*/
+  color: #33691E;
 }
 
 .tools li {

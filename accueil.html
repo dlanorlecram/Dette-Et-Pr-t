@@ -6,15 +6,23 @@
     <meta name="Dette et prêt">
     <title>Dette et prêt Accueil</title>
     <link href="public/css/styles.css" type="text/css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!--link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")-->
     <link href="public/bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf">
+    <script src="public/bower_components/angular/angular.js"></script>
+    <script src="public/bower_components/angular-route/angular-route.js"></script>
+    <script src="public/js/myapp.js"></script>
+    <script src="public/js/config.js"></script>
+    <!--script(type='text/javascript')
+    console.log("test");
+
+    -->
   </head>
-  <body ng-app>
+  <body ng-app="myApp">
     <div class="wrapper">
       <header>
         <nav>
           <div class="nav-header">
-            <h1 class="header">App Mes Dettes</h1>
+            <h1 class="header">MyApp</h1>
           </div>
           <div class="count_section">
             <ul class="fa fa-chevron-down">
@@ -26,110 +34,103 @@
         </nav>
       </header>
       <section>
-        <div class="compta" ng-view>
+        <div class="compta">
           <div class="filter">
             <ul>
-              <li><a href="#prêt">Mes Prêts</a></li>
-              <li><a href="#prêt">Mes Dettes</a></li>
-              <li><a href="#prêt">Totaux</a></li>
+              <li><a href="">Mes Prêts</a></li>
+              <li><a href="#dettes">Mes Dettes</a></li>
+              <li><a href="#totaux">Totaux</a></li>
             </ul>
           </div>
           <div class="historique">
-            <div class="row">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Qui</th>
-                    <th>Quand</th>
-                    <th>Somme dû</th>
-                    <th>Motif</th>
-                  </tr>
-                </thead>
-              </table>
-              <div class="tette">
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>Jean Toto</td>
-                      <td>20 Mai 2016</td>
-                      <td>30 $</td>
-                      <td>Une pint d'embuscade</td>
-                    </tr>
-                    <tr>
-                      <td>Michèle Lefou</td>
-                      <td>15 Mai 2015</td>
-                      <td>200 $</td>
-                      <td>Bijoux pour sa</td>
-                    </tr>
-                    <tr>
-                      <td>Michèle Lefou</td>
-                      <td>15 Mai 2015</td>
-                      <td>200 $</td>
-                      <td>Bijoux pour sa femme</td>
-                    </tr>
-                    <tr>
-                      <td>Michèle Lefou</td>
-                      <td>15 Mai 2015</td>
-                      <td>200 $</td>
-                      <td>Bijoux pour sa femme</td>
-                    </tr>
-                    <tr>
-                      <td>Michèle Lefou</td>
-                      <td>15 Mai 2015</td>
-                      <td>200 $</td>
-                      <td>Bijoux pour sa femme</td>
-                    </tr>
-                    <tr>
-                      <td>Michèle Lefou</td>
-                      <td>15 Mai 2015</td>
-                      <td>200 $</td>
-                      <td>Bijoux pour sa femme</td>
-                    </tr>
-                    <tr>
-                      <td>Michèle Lefou</td>
-                      <td>15 Mai 2015</td>
-                      <td>200 $</td>
-                      <td>Bijoux pour sa femme</td>
-                    </tr>
-                    <tr>
-                      <td>Michèle Lefou</td>
-                      <td>15 Mai 2015</td>
-                      <td>200 $</td>
-                      <td>Bijoux pour sa femme</td>
-                    </tr>
-                    <tr>
-                      <td>Michèle Lefou</td>
-                      <td>15 Mai 2015</td>
-                      <td>200 $</td>
-                      <td>Bijoux pour sa femme</td>
-                    </tr>
-                    <tr>
-                      <td>Michèle Lefou</td>
-                      <td>15 Mai 2015</td>
-                      <td>200 $</td>
-                      <td>Bijoux pour sa femme</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!--.box_item
-              ul
-                  li close
-                  li Jean Toto
-                  li 20 Mai 2016
-                  li 30 $
-                  li Une pint d'embuscade
-              -->
-              <!--.box_item
-              ul
-                  li close
-                  li Michèle Lefou
-                  li 15 Mai 2015
-                  li 200 $
-                  li Bijoux pour sa femme
+            <div class="row" ng-view>
+              <!--table(ng-controller='userCtrl')
+              thead
+                  tr
+                      th Qui
+                      th Quand
+                      th Somme dû
+                      th Motif
+                      th Groupe
+              tbody
+                  tr(ng-repeat="user in users")
+                    td {{user.Concernes}}
+                    td {{user.Date}}
+                    td {{user.Montant}}€
+                    td {{user.Description}}
+                    td {{user.usergroup}}
+                    //tr
+                        td Jean Toto
+                        td 20 Mai 2016
+                        td 30 $
+                        td Une pint d'embuscade
+                    //tr
+                        td Michèle Lefou
+                        td 15 Mai 2015
+                        td 200 $
+                        td Bijoux pour sa
+                    //tr
+                        td Michèle Lefou
+                        td 15 Mai 2015
+                        td 200 $
+                        td Bijoux pour sa femme
+                    //tr
+                        td Michèle Lefou
+                        td 15 Mai 2015
+                        td 200 $
+                        td Bijoux pour sa femme
+                    //tr
+                        td Michèle Lefou
+                        td 15 Mai 2015
+                        td 200 $
+                        td Bijoux pour sa femme
+                    //tr
+                        td Michèle Lefou
+                        td 15 Mai 2015
+                        td 200 $
+                        td Bijoux pour sa femme
+                     //tr
+                        td Michèle Lefou
+                        td 15 Mai 2015
+                        td 200 $
+                        td Bijoux pour sa femme
+
+                    //tr
+                        td Michèle Lefou
+                        td 15 Mai 2015
+                        td 200 $
+                        td Bijoux pour sa femme
+
+                    //tr
+                        td Michèle Lefou
+                        td 15 Mai 2015
+                        td 200 $
+                        td Bijoux pour sa femme
+
+                    //tr
+                        td Michèle Lefou
+                        td 15 Mai 2015
+                        td 200 $
+                        td Bijoux pour sa femme
               -->
             </div>
           </div>
+          <!--.box_item
+          ul
+              li close
+              li Jean Toto
+              li 20 Mai 2016
+              li 30 $
+              li Une pint d'embuscade
+          -->
+          <!--.box_item
+          ul
+              li close
+              li Michèle Lefou
+              li 15 Mai 2015
+              li 200 $
+              li Bijoux pour sa femme
+          -->
           <div class="option">
             <ul class="tools">
               <li class="fa fa-plus adding"><span>add</span></li>

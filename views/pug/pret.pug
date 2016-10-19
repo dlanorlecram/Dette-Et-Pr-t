@@ -1,0 +1,15 @@
+table
+    thead
+        tr
+            th Qui
+            th Quand
+            th Somme dû
+            th Motif
+            th Groupe
+    tbody
+        tr(ng-repeat="user in users")
+            td {{user.Concernes}}
+            td {{user.Date}}
+            td {{user.Montant}}€
+            td {{user.Description}}
+            td {{user.usergroup}}

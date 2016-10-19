@@ -5,6 +5,10 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
     // Task configuration.
+        server:{
+                   port: 3000,
+                   base: './public'
+            },
 
         watch: {
             slim:{

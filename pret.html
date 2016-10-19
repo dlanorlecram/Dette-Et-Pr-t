@@ -1,0 +1,21 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Qui</th>
+      <th>Quand</th>
+      <th>Somme dû</th>
+      <th>Motif</th>
+      <th>Groupe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users">
+      <td>{{user.Concernes}}</td>
+      <td>{{user.Date}}</td>
+      <td>{{user.Montant}}€</td>
+      <td>{{user.Description}}</td>
+      <td>{{user.usergroup}}</td>
+    </tr>
+  </tbody>
+</table>
