@@ -1,0 +1,21 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Qui</th>
+      <th>Quand</th>
+      <th>Somme dû</th>
+      <th>Motif</th>
+      <th>Groupe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="cash in money">
+      <td>{{cash.Concernes}}</td>
+      <td>{{cash.Date}}</td>
+      <td>{{cash.Montant}}€</td>
+      <td>{{cash.Description}}</td>
+      <td>{{cash.usergroup}}</td>
+    </tr>
+  </tbody>
+</table>

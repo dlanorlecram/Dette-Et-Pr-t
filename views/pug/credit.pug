@@ -1,0 +1,15 @@
+table
+    thead
+        tr
+            th Qui
+            th Quand
+            th Somme dû
+            th Motif
+            th Groupe
+    tbody
+        tr(ng-repeat="cash in money")
+            td {{cash.Concernes}}
+            td {{cash.Date}}
+            td {{cash.Montant}}€
+            td {{cash.Description}}
+            td {{cash.usergroup}}

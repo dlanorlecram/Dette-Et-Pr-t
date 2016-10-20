@@ -3,41 +3,63 @@ var app = angular.module('myApp', ['ngRoute']);
 //création d'un service pour lier des donnée entre deux controller
 
 //Mise en commun json files
-app.factory('dealFactory',function(){
-  var deal = {
-      users: false,
-    user= $http.get('/db')  ,
+app.factory('dealFactory', function($http){
 
-    getUsers: function(){
-      return factory.posts;
-    },
-    //ma fonction pour parcourir un user
-    getUser: function(id){
-      var user = {};
-      angular.forEach(factory.users, function(value, key){
-        if(value.id == id){
-            console.log('value id' + value)
-            post = value.id;
-            console.log('user'+ user);
-          }
-      });
-      return post;
-    },
-  }
+    var factory = {
+
+        depenses: $http.get('db/depenses.json').then(function(reponse){
+        reponse.data.records;
+            console.log(factory);
+        }),
+
+        getUsers: function(){
+            return factory;
+        },
+
+        getMoney: function(){
+            return depenses.money;
+        }
+    }
+    return factory;
+});
+/*app.factory('postFactory',function(){
+  var factory = {
+        posts:[
+        ],
+        getPosts: function(){
+          return factory.posts;
+        },
+        getPost: function(id){
+          var post = {};
+          angular.forEach(factory.posts, function(value, key){
+            if(value.id == id){
+                console.log('value id' + value)
+                post = value.id;
+                console.log('post'+post);
+              }
+          });
+          return post;
+        },
+    }
   return factory;
-})
+})*/
 
 
 // Controller to manage donatation
-app.controller('donateCtrl', function($scope, $http, $route){
-    $http.get('db/depenses.json').then(function(reponse){
-        $scope.users = reponse.data.records;
+app.controller('creditCtrl', function($scope, $http, $route, dealFactory){
+    //$http.get('db/depenses.json').then(function(reponse){
+        //$scope.money = reponse.data.records;
+        $scope.money = dealFactory.getMoney();
     });
-});
+//});
 
 
 //Controller to manage payback
-app.controller('paybackCtrl', function($scope, ))
+app.controller('paybackCtrl', function($scope,$http, $route, dealFactory){
+     $http.get('db/users.json').then(function(reponse){
+        $scope.users = reponse.data.records;
+    });
+});
 
 
 

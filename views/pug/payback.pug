@@ -3,13 +3,11 @@ table
         tr
             th Qui
             th Quand
-            th Somme dû
-            th Motif
             th Groupe
+            th Id
     tbody
         tr(ng-repeat="user in users")
-            td {{user.Concernes}}
-            td {{user.Date}}
+            td {{user.id}}
+            td {{user.username}}
             td {{user.Montant}}€
-            td {{user.Description}}
             td {{user.usergroup}}

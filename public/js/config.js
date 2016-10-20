@@ -1,7 +1,9 @@
 console.log('chargement de config.js');
 app.config(function($routeProvider){
   $routeProvider
-    .when('/', {templateUrl: 'pret.html', controller: 'donateCtrl'})
-    .when('/dettes', {templateUrl: 'dettes.html', controller: 'paybackCtrl'})
+    .when('/', {templateUrl: 'credit.html', controller: 'creditCtrl'})
+    .when('/credit', {templateUrl: 'credit.html', controller: 'creditCtrl'})
+    .when('/payback', {templateUrl: 'payback.html', controller: 'paybackCtrl'})
+    //.when('/totals', {templateUrl: 'payback.html', controller: 'paybackCtrl'})
     .otherwise({redirectTo:'/'});
 });
