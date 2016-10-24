@@ -9,120 +9,68 @@ html(lang='fr')
         //link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
         link( href='public/bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf')
         script(src='public/bower_components/angular/angular.js')
-        script(src='public/bower_components/angular-route/angular-route.js')
+          //script(src='public/bower_components/angular-route/angular-route.js')
         script(src='public/js/myapp.js')
-        script(src='public/js/config.js')
-        //script(type='text/javascript')
-            console.log("test");
+         //script(src='public/js/config.js')
 
     body(ng-app="myApp")
         .wrapper
             section
                 header
                     nav
-                        .nav-header
-                            h1.header MyApp
-                        .count_section
-                            ul.fa.fa-chevron-down
-                                li Logout
-                                li My account
-                                li About it!
-                .compta
-                    .filter
-                        ul
-                            li
-                                a(href="#credit") Mes Prêts
-                            li
-                                a(href="#payback") Mes Dettes
-                            li
-                                a(href="#totaux") Totaux
-                    .historique
-                        .row(ng-view)
-                            //table(ng-controller='userCtrl')
-                                thead
-                                    tr
-                                        th Qui
-                                        th Quand
-                                        th Somme dû
-                                        th Motif
-                                        th Groupe
-                                tbody
-                                    tr(ng-repeat="user in users")
-                                      td {{user.Concernes}}
-                                      td {{user.Date}}
-                                      td {{user.Montant}}€
-                                      td {{user.Description}}
-                                      td {{user.usergroup}}
-                                      //tr
-                                          td Jean Toto
-                                          td 20 Mai 2016
-                                          td 30 $
-                                          td Une pint d'embuscade
-                                      //tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa
-                                      //tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa femme
-                                      //tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa femme
-                                      //tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa femme
-                                      //tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa femme
-                                       //tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa femme
-
-                                      //tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa femme
-
-                                      //tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa femme
-
-                                      //tr
-                                          td Michèle Lefou
-                                          td 15 Mai 2015
-                                          td 200 $
-                                          td Bijoux pour sa femme
-                    //.box_item
-                        ul
-                            li close
-                            li Jean Toto
-                            li 20 Mai 2016
-                            li 30 $
-                            li Une pint d'embuscade
-                    //.box_item
-                        ul
-                            li close
-                            li Michèle Lefou
-                            li 15 Mai 2015
-                            li 200 $
-                            li Bijoux pour sa femme
-                    .option
-                        ul.tools
-                            li.fa.fa-plus.adding
-                                span add
-                            li.fa.fa-filter.changing
-                                span change
+                      .nav-header
+                        .profile
+                        span Hello Ronald!
+                      .count_section
+                          ul
+                              li
+                                a(href="#") Logout
+                              li
+                                a(href="#") My account
+                              li
+                                a(href="#") About it!
+                .row
+                  .compta.col-12
+                      .filter
+                          ul
+                              li
+                                  a(href="#credit") Mes Prêts
+                              li
+                                  a(href="#payback") Mes Dettes
+                              li
+                                  a(href="#totaux") Totaux
+                      .historique.col-8(ng-controller="paybackCtrl")
+                          //- .row(ng-view)
+                          .next(ng-controller="creditCtrl")
+                            //.box1
+                              h1 dépenses
+                                .box_item_dette
+                                    ul(ng-repeat="user in users")
+                                        li {{user.id}}
+                                        li {{user.username}}
+                                        li {{user.usergroup}}
+                                        li {{user.usercolor}}
+                            .box2
+                              h2 dettes
+                              .box_item_dette.col-3(ng-repeat="cash in money")
+                                  ul
+                                    li {{aUsers[cash.Payeur]}}
+                                    li {{cash.Concernes}}
+                                    li {{cash.Date}}
+                                    li {{cash.Montant}}€
+                                    li {{cash.Description}}
+                                    li {{cash.usergroup}}
+                      .option.col-4
+                          ul.tools
+                              li.adding
+                                  span add
+                              li.changing
+                                  span change
+                          .adding
+                            form
+                              input(type="text" placeholder="Concernes")
+                              input(type="text" placeholder="Date")
+                              input(type="text" placeholder="Montant")
+                              input(type="text" placeholder="Description")
+                              input(type="text" placeholder="Groupe")
+                              input(type="submit" value="Ajouter")

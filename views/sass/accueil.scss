@@ -31,37 +31,92 @@ header{
         right:20px;
         left:20px;
     }
-    background-color: rgba(0,0,0,0.25);
+    //background-color: rgba(0,0,0,0.25);
     color: white;
 }
 nav{
-    display: inline-block;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 450px;
+    background-color: coral;
     .nav-header{
+        padding-top: 10px;
+        padding-bottom: 10px;
         float: left;
         font-size: 15px;
-        h1{
+        /*h1{
         line-height: 50px;
         margin: 0;
+      }*/
+        .profile{
+          float: left;
+          border-radius: 100%;
+          border: 3px solid #FFF;
+          height: 50px;
+          width: 50px;
+          background-image: url('../assets/nobody_m.original.jpg');
+          background-size: contain;
+        }
+        span{
+          float: left;
+          display: block;
+          line-height: 50px;
+          margin-left: 15px;
         }
     }
     .count_section{
         display: block;
-        position: absolute;
-        right: 20px;
+        float: right;
+        //position: absolute;
+        //right: 20px;
+        &::before{
+            font-family: 'FontAwesome';
+            content: '\f078';
+            position: absolute;
+            top: 26px;
+            left: 282px;
+            cursor: pointer;
+        }
         ul{
+          margin-top: 20px;
+          position: absolute;
+          top: 61px;
+          //right: 296px;
+          left: 103px;
+          background: white;
+          color: black;
+          padding: 20px;
+          &::after{
+            content: '';
+            position: absolute;
+            bottom: 56px;
+            right: 37px;
+            border-bottom:#FFF 10px solid;
+            border-left: transparent 10px solid;
+            border-right: transparent 10px solid;
+          }
             li{
+                font-size: 15px;
                 display: inline;
                 font-size: 13px;
                 margin:{
                     left: 5px;
                     right: 5px;
                 }
+                a{
+                  list-style: none;
+                  text-decoration: none;
+                }
             }
         }
     }
 }
 .option{
-
+  background-color: white;
+  ul{
+    margin: 0;
+  }
 
 }
 .fa{
@@ -84,8 +139,8 @@ span{
 
 .filter{
     width: 236px;
-    height: 35px;
-    background-color: #FFF;
+    //height: 35px;
+    //background-color: #FFF;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
   /*   margin-bottom: 8px; */
@@ -129,7 +184,7 @@ span{
     }
 }
 .adding:before{
-        content: '\f067';
+      //content: '\f067';
     }
 .changing:before{
         content: '';
@@ -148,7 +203,7 @@ span{
 .historique{
   height: auto;
   width: 100%;
-  background-color: white;
+  //background-color: white;
   display: block;
     //overflow: scroll;
     table{
@@ -235,11 +290,67 @@ tbody{
     height: 250px;
 }
 .tools{
-  background-color: white;
-  border--left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  height: 40px;
-  height:56px
+  //background-color: white;
+  //border-left-radius: 4px;
+  //border-bottom-right-radius: 4px;
+  //border-bottom-left-radius: 4px;
+  //height: 40px;
+  //height:56px
 
+}
+
+.box_item_dette{
+  text-align: center;
+  // width: 200px;
+  // float: left;
+  // padding: 0 5px;
+  //height: 100px;
+
+  ul{
+    width: 100%;
+    //height: 30px;
+    margin: 2px 0;
+    background: white;
+    box-shadow: 0.1px 0.2px 1px 0px #000;
+    display: block;
+    padding: 0;
+    font-size: 10px;
+    text-transform: capitalize;
+    li{
+      display: block;
+      line-height: 32px;
+      &:first-child{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      &:nth-child(1n+1){
+        margin: 0 15px;
+      }
+    }
+  }
+}
+.option{
+  width: 250px;
+  .tools{
+    li{
+
+    }
+  }
+  .adding{
+    width: 100%;
+    height: auto;
+    background-color: rgb(243,130,95);
+    padding: 10px;
+    input{
+      width: 100%;
+      background: transparent;
+      border: 1px solid rgb(255,197,178);
+      margin: 10px 0;
+      padding: 5px 10px;
+      font-size: 10px;
+    }
+    input[type="submit"]{
+      cursor: pointer;
+    }
+  }
 }

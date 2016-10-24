@@ -8,14 +8,12 @@
     <link href="public/css/styles.css" type="text/css" rel="stylesheet">
     <!--link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")-->
     <link href="public/bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf">
-    <script src="public/bower_components/angular/angular.js"></script>
-    <script src="public/bower_components/angular-route/angular-route.js"></script>
-    <script src="public/js/myapp.js"></script>
-    <script src="public/js/config.js"></script>
-    <!--script(type='text/javascript')
-    console.log("test");
-
-    -->
+    <script src="public/bower_components/angular/angular.js">
+      <!--script(src='public/bower_components/angular-route/angular-route.js')-->
+    </script>
+    <script src="public/js/myapp.js">
+      <!--script(src='public/js/config.js')-->
+    </script>
   </head>
   <body ng-app="myApp">
     <div class="wrapper">
@@ -23,119 +21,68 @@
         <header>
           <nav>
             <div class="nav-header">
-              <h1 class="header">MyApp</h1>
+              <div class="profile"></div><span>Hello Ronald!</span>
             </div>
             <div class="count_section">
-              <ul class="fa fa-chevron-down">
-                <li>Logout</li>
-                <li>My account</li>
-                <li>About it!</li>
+              <ul>
+                <li><a href="#">Logout</a></li>
+                <li><a href="#">My account</a></li>
+                <li><a href="#">About it!</a></li>
               </ul>
             </div>
           </nav>
         </header>
-        <div class="compta">
-          <div class="filter">
-            <ul>
-              <li><a href="#credit">Mes Prêts</a></li>
-              <li><a href="#payback">Mes Dettes</a></li>
-              <li><a href="#totaux">Totaux</a></li>
-            </ul>
-          </div>
-          <div class="historique">
-            <div class="row" ng-view>
-              <!--table(ng-controller='userCtrl')
-              thead
-                  tr
-                      th Qui
-                      th Quand
-                      th Somme dû
-                      th Motif
-                      th Groupe
-              tbody
-                  tr(ng-repeat="user in users")
-                    td {{user.Concernes}}
-                    td {{user.Date}}
-                    td {{user.Montant}}€
-                    td {{user.Description}}
-                    td {{user.usergroup}}
-                    //tr
-                        td Jean Toto
-                        td 20 Mai 2016
-                        td 30 $
-                        td Une pint d'embuscade
-                    //tr
-                        td Michèle Lefou
-                        td 15 Mai 2015
-                        td 200 $
-                        td Bijoux pour sa
-                    //tr
-                        td Michèle Lefou
-                        td 15 Mai 2015
-                        td 200 $
-                        td Bijoux pour sa femme
-                    //tr
-                        td Michèle Lefou
-                        td 15 Mai 2015
-                        td 200 $
-                        td Bijoux pour sa femme
-                    //tr
-                        td Michèle Lefou
-                        td 15 Mai 2015
-                        td 200 $
-                        td Bijoux pour sa femme
-                    //tr
-                        td Michèle Lefou
-                        td 15 Mai 2015
-                        td 200 $
-                        td Bijoux pour sa femme
-                     //tr
-                        td Michèle Lefou
-                        td 15 Mai 2015
-                        td 200 $
-                        td Bijoux pour sa femme
-
-                    //tr
-                        td Michèle Lefou
-                        td 15 Mai 2015
-                        td 200 $
-                        td Bijoux pour sa femme
-
-                    //tr
-                        td Michèle Lefou
-                        td 15 Mai 2015
-                        td 200 $
-                        td Bijoux pour sa femme
-
-                    //tr
-                        td Michèle Lefou
-                        td 15 Mai 2015
-                        td 200 $
-                        td Bijoux pour sa femme
-              -->
+        <div class="row">
+          <div class="compta col-12">
+            <div class="filter">
+              <ul>
+                <li><a href="#credit">Mes Prêts</a></li>
+                <li><a href="#payback">Mes Dettes</a></li>
+                <li><a href="#totaux">Totaux</a></li>
+              </ul>
             </div>
-          </div>
-          <!--.box_item
-          ul
-              li close
-              li Jean Toto
-              li 20 Mai 2016
-              li 30 $
-              li Une pint d'embuscade
-          -->
-          <!--.box_item
-          ul
-              li close
-              li Michèle Lefou
-              li 15 Mai 2015
-              li 200 $
-              li Bijoux pour sa femme
-          -->
-          <div class="option">
-            <ul class="tools">
-              <li class="fa fa-plus adding"><span>add</span></li>
-              <li class="fa fa-filter changing"><span>change</span></li>
-            </ul>
+            <div class="historique col-8" ng-controller="paybackCtrl">
+              <div class="next" ng-controller="creditCtrl">
+                <!--.box1
+                h1 dépenses
+                  .box_item_dette
+                      ul(ng-repeat="user in users")
+                          li {{user.id}}
+                          li {{user.username}}
+                          li {{user.usergroup}}
+                          li {{user.usercolor}}
+                -->
+                <div class="box2">
+                  <h2>dettes</h2>
+                  <div class="box_item_dette col-3" ng-repeat="cash in money">
+                    <ul>
+                      <li>{{aUsers[cash.Payeur]}}</li>
+                      <li>{{cash.Concernes}}</li>
+                      <li>{{cash.Date}}</li>
+                      <li>{{cash.Montant}}€</li>
+                      <li>{{cash.Description}}</li>
+                      <li>{{cash.usergroup}}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="option col-4">
+              <ul class="tools">
+                <li class="adding"><span>add</span></li>
+                <li class="changing"><span>change</span></li>
+              </ul>
+              <div class="adding">
+                <form>
+                  <input type="text" placeholder="Concernes">
+                  <input type="text" placeholder="Date">
+                  <input type="text" placeholder="Montant">
+                  <input type="text" placeholder="Description">
+                  <input type="text" placeholder="Groupe">
+                  <input type="submit" value="Ajouter">
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>

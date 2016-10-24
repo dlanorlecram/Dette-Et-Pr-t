@@ -1,19 +1,24 @@
 
-<table>
-  <thead>
-    <tr>
-      <th>Qui</th>
-      <th>Quand</th>
-      <th>Groupe</th>
-      <th>Id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="user in users">
-      <td>{{user.id}}</td>
-      <td>{{user.username}}</td>
-      <td>{{user.Montant}}€</td>
-      <td>{{user.usergroup}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="box_item_dette">
+  <ul ng-repeat="user in users">
+    <li>{{user.id}}</li>
+    <li>{{user.username}}</li>
+    <li>{{user.Montant}}€</li>
+    <li>{{user.usergroup}}</li>
+    <li>Une pint d'embuscade</li>
+  </ul>
+</div>
+<!--table
+thead
+    tr
+        th Qui
+        th Quand
+        th Groupe
+        th Id
+tbody
+    tr(ng-repeat="user in users")
+        td {{user.id}}
+        td {{user.username}}
+        td {{user.Montant}}€
+        td {{user.usergroup}}
+-->

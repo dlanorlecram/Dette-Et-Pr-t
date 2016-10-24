@@ -1,22 +1,29 @@
 
-<table>
-  <thead>
-    <tr>
-      <th>Qui</th>
-      <th>Quand</th>
-      <th>Somme dû</th>
-      <th>Motif</th>
-      <th>Groupe</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="cash in money">
-      <td>{{cash.Concernes}}</td>
-      <td>{{cash.Date}}</td>
-      <td>{{cash.Montant}}€</td>
-      <td>{{cash.Description}}</td>
-      <td>{{cash.usergroup}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="box_item_dette" ng-repeat="cash in money">
+  <ul>
+    <li>{{aUser[cash.Payeur]}}</li>
+    <li>{{cash.Concernes}}</li>
+    <li>{{cash.Date}}</li>
+    <li>{{cash.Montant}}€</li>
+    <li>{{cash.Description}}</li>
+    <li>{{cash.usergroup}}</li>
+  </ul>
+</div>
+<!--table
+thead
+    tr
+        th Qui
+        th Quand
+        th Somme dû
+        th Motif
+        th Groupe
+tbody
+    tr(ng-repeat="cash in money")
+        td {{cash.Concernes}}
+        td {{cash.Date}}
+        td {{cash.Montant}}€
+        td {{cash.Description}}
+        td {{cash.usergroup}}
+
+-->
 <!--http://javascript.developpez.com/tutoriels/javascript/angularjs-8-iteration-filter/-->

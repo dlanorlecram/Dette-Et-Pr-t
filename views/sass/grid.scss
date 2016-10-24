@@ -1,0 +1,18 @@
+$col_max: 12;
+
+@for $i from 1 through $col_max{
+  .col-#{$i}{
+    width: percentage($i/$col_max);
+    float:left;
+    margin: 0 15px;
+  }
+}
+.row{
+  &:after, :before{
+    display: table;
+    content:'';
+  }
+  &:after{
+    clear:both;
+  }
+}

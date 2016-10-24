@@ -17,31 +17,88 @@ body {
 header {
   padding-right: 20px;
   padding-left: 20px;
-  background-color: rgba(0, 0, 0, 0.25);
   color: white;
 }
 
 nav {
-  display: inline-block;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 450px;
+  background-color: coral;
 }
 nav .nav-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
   float: left;
   font-size: 15px;
-}
-nav .nav-header h1 {
+  /*h1{
   line-height: 50px;
   margin: 0;
+}*/
+}
+nav .nav-header .profile {
+  float: left;
+  border-radius: 100%;
+  border: 3px solid #FFF;
+  height: 50px;
+  width: 50px;
+  background-image: url("../assets/nobody_m.original.jpg");
+  background-size: contain;
+}
+nav .nav-header span {
+  float: left;
+  display: block;
+  line-height: 50px;
+  margin-left: 15px;
 }
 nav .count_section {
   display: block;
+  float: right;
+}
+nav .count_section::before {
+  font-family: 'FontAwesome';
+  content: '\f078';
   position: absolute;
-  right: 20px;
+  top: 26px;
+  left: 282px;
+  cursor: pointer;
+}
+nav .count_section ul {
+  margin-top: 20px;
+  position: absolute;
+  top: 61px;
+  left: 103px;
+  background: white;
+  color: black;
+  padding: 20px;
+}
+nav .count_section ul::after {
+  content: '';
+  position: absolute;
+  bottom: 56px;
+  right: 37px;
+  border-bottom: #FFF 10px solid;
+  border-left: transparent 10px solid;
+  border-right: transparent 10px solid;
 }
 nav .count_section ul li {
+  font-size: 15px;
   display: inline;
   font-size: 13px;
   margin-left: 5px;
   margin-right: 5px;
+}
+nav .count_section ul li a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.option {
+  background-color: white;
+}
+.option ul {
+  margin: 0;
 }
 
 .fa {
@@ -64,8 +121,6 @@ span {
 
 .filter {
   width: 236px;
-  height: 35px;
-  background-color: #FFF;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   /*   margin-bottom: 8px; */
@@ -102,10 +157,6 @@ span {
   display: inline;
 }
 
-.adding:before {
-  content: '\f067';
-}
-
 .changing:before {
   content: '';
 }
@@ -121,7 +172,6 @@ span {
 .historique {
   height: auto;
   width: 100%;
-  background-color: white;
   display: block;
 }
 .historique table {
@@ -202,22 +252,138 @@ tbody {
   height: 250px;
 }
 
-.tools {
-  background-color: white;
-  border--left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  height: 40px;
-  height: 56px;
+.box_item_dette {
+  text-align: center;
+}
+.box_item_dette ul {
+  width: 100%;
+  margin: 2px 0;
+  background: white;
+  box-shadow: 0.1px 0.2px 1px 0px #000;
+  display: block;
+  padding: 0;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+.box_item_dette ul li {
+  display: block;
+  line-height: 32px;
+}
+.box_item_dette ul li:first-child {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.box_item_dette ul li:nth-child(1n+1) {
+  margin: 0 15px;
+}
+
+.option {
+  width: 250px;
+}
+.option .adding {
+  width: 100%;
+  height: auto;
+  background-color: #f3825f;
+  padding: 10px;
+}
+.option .adding input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #ffc5b2;
+  margin: 10px 0;
+  padding: 5px 10px;
+  font-size: 10px;
+}
+.option .adding input[type="submit"] {
+  cursor: pointer;
+}
+
+.col-1 {
+  width: 8.33333%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-2 {
+  width: 16.66667%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-3 {
+  width: 25%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-4 {
+  width: 33.33333%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-5 {
+  width: 41.66667%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-6 {
+  width: 50%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-7 {
+  width: 58.33333%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-8 {
+  width: 66.66667%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-9 {
+  width: 75%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-10 {
+  width: 83.33333%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-11 {
+  width: 91.66667%;
+  float: left;
+  margin: 0 15px;
+}
+
+.col-12 {
+  width: 100%;
+  float: left;
+  margin: 0 15px;
+}
+
+.row:after, .row :before {
+  display: table;
+  content: '';
+}
+.row:after {
+  clear: both;
 }
 
 /*------|Variable|------*/
 /*------|Class Css|------*/
 html, body {
   font-family: 'Lato', sans-serif;
-  height: 100%;
+  height: auto;
   margin: 0;
-  background: #FFF;
 }
 
 .wrapper {

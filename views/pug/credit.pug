@@ -1,4 +1,12 @@
-table
+.box_item_dette(ng-repeat="cash in money")
+    ul
+      li {{aUser[cash.Payeur]}}
+      li {{cash.Concernes}}
+      li {{cash.Date}}
+      li {{cash.Montant}}€
+      li {{cash.Description}}
+      li {{cash.usergroup}}
+//table
     thead
         tr
             th Qui

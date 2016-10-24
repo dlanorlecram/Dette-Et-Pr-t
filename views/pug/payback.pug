@@ -1,4 +1,11 @@
-table
+.box_item_dette
+    ul(ng-repeat="user in users")
+        li {{user.id}}
+        li {{user.username}}
+        li {{user.Montant}}€
+        li {{user.usergroup}}
+        li Une pint d'embuscade
+//table
     thead
         tr
             th Qui
