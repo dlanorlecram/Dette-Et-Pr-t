@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic');
 
+
 // MIXIN GRID
 $total-columns: 12;
 @mixin name($col){
@@ -30,6 +31,7 @@ header{
     padding:{
         right:20px;
         left:20px;
+        bottom:70px;
     }
     //background-color: rgba(0,0,0,0.25);
     color: white;
@@ -38,8 +40,9 @@ nav{
     display: flex;
     padding-left: 20px;
     padding-right: 20px;
-    width: 450px;
+    width: 400px;
     background-color: coral;
+    margin: 0 auto;
     .nav-header{
         padding-top: 10px;
         padding-bottom: 10px;
@@ -75,15 +78,15 @@ nav{
             content: '\f078';
             position: absolute;
             top: 26px;
-            left: 282px;
+            right: 340px;
             cursor: pointer;
         }
         ul{
           margin-top: 20px;
           position: absolute;
           top: 61px;
-          //right: 296px;
-          left: 103px;
+          right: 300px;
+          //left: 103px;
           background: white;
           color: black;
           padding: 20px;
@@ -113,7 +116,7 @@ nav{
     }
 }
 .option{
-  background-color: white;
+
   ul{
     margin: 0;
   }
@@ -263,6 +266,7 @@ span{
     }
 
     .box_item{
+        word-wrap: break-word;
         height: 30px;
         background-color: aquamarine;
         padding-left: 20px;
@@ -300,6 +304,7 @@ tbody{
 }
 
 .box_item_dette{
+  word-wrap: break-word;
   text-align: center;
   // width: 200px;
   // float: left;
@@ -336,21 +341,168 @@ tbody{
 
     }
   }
-  .adding{
+}
+.form_add_spending{
+  float: left;
+  width: 250px;
+  height: auto;
+  background-color: rgb(243,130,95);
+  padding: 10px;
+  input{
     width: 100%;
-    height: auto;
-    background-color: rgb(243,130,95);
-    padding: 10px;
-    input{
-      width: 100%;
-      background: transparent;
-      border: 1px solid rgb(255,197,178);
-      margin: 10px 0;
-      padding: 5px 10px;
-      font-size: 10px;
+    background: transparent;
+    border: 1px solid rgb(255,197,178);
+    margin: 0px 0 10px 0;
+  padding: 5px 10px;
+    font-size: 10px;
+  }
+  input[type="submit"]{
+    cursor: pointer;
+  }
+}
+
+.form_add_user{
+  margin-left: 5px;
+  float: left;
+  width: 250px;
+  height: auto;
+  background-color: rgb(243,130,95);
+  padding: 10px;
+  input{
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgb(255,197,178);
+    margin: 0px 0 10px 0;
+    padding: 5px 10px;
+    font-size: 10px;
+    &:placeholder-shown{
+    color: green;
     }
-    input[type="submit"]{
-      cursor: pointer;
+  }
+  ul{
+    //height: 10.7334px;
+    font-size: 10px;
+    text-transform: capitalize;
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    height: 22.3px;
+    padding: 1px 10px;
+    //background-color: aquamarine;
+    line-height: 22.3px;
+    margin-top: 0;
+    border: 1px solid #ffc5b2;
+    color: white;
+    cursor: pointer;
+    li{
+      &:not(.init){display: none;}
+    }
+  }
+
+  select{
+    display: block;
+    margin: 0 auto;
+  }
+}
+label{
+  font-size: 10px;
+  color: white;
+}
+.title_form{
+  text-align: center;
+  color: white;
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+
+.form_add_group{
+  margin-left: 5px;
+  float: left;
+  width: 250px;
+  height: auto;
+  background-color: rgb(243,130,95);
+  padding: 10px;
+  input{
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgb(255,197,178);
+    margin: 0px 0 10px 0;
+    padding: 5px 10px;
+    font-size: 10px;
+    &:placeholder-shown{
+    color: green;
+    }
+  }
+  input[type="submit"]{
+    cursor: pointer;
+  }
+  select{
+    display: block;
+    margin: 0 auto;
+  }
+}
+////
+li.name{
+  font-size: 14px;
+}
+li.concernes{
+  font-size: 8px;
+}
+li.date{
+  font-size: 10px;
+}
+li.price{
+  font-size: 20px;
+}
+li.desc{
+  font-size: 18px;
+}
+li.group{
+  font-size: 12px;
+}
+
+input[type="submit"]{
+  cursor: pointer;
+  color: white;
+}
+//////
+.option_menu{
+  padding-top: 20px;
+  padding-bottom: 18px;
+  ul{
+    line-height: 2;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    li{
+      list-style: none;
+      font-size: 10px;
+      text-transform: uppercase;
+      a{
+        margin-left: 14px;
+
+      }
     }
   }
 }
+
+.count_section{
+  ul{
+    li{
+      a{
+        font-family: "Lato", sans-serif;
+        &:before{
+          margin-right: 10px;
+          font-family: "Fontawesome";
+        }
+      }
+    }
+  }
+}
+
+.toggle_menu{
+  margin-left: 59px;
+  padding-top: 28px;
+}
+//////

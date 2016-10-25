@@ -17,6 +17,7 @@ body {
 header {
   padding-right: 20px;
   padding-left: 20px;
+  padding-bottom: 70px;
   color: white;
 }
 
@@ -24,8 +25,9 @@ nav {
   display: flex;
   padding-left: 20px;
   padding-right: 20px;
-  width: 450px;
+  width: 400px;
   background-color: coral;
+  margin: 0 auto;
 }
 nav .nav-header {
   padding-top: 10px;
@@ -61,14 +63,14 @@ nav .count_section::before {
   content: '\f078';
   position: absolute;
   top: 26px;
-  left: 282px;
+  right: 340px;
   cursor: pointer;
 }
 nav .count_section ul {
   margin-top: 20px;
   position: absolute;
   top: 61px;
-  left: 103px;
+  right: 300px;
   background: white;
   color: black;
   padding: 20px;
@@ -94,9 +96,6 @@ nav .count_section ul li a {
   text-decoration: none;
 }
 
-.option {
-  background-color: white;
-}
 .option ul {
   margin: 0;
 }
@@ -221,6 +220,7 @@ span {
   border-bottom: solid 1px rgba(255, 255, 255, 0.1);
 }
 .historique .box_item {
+  word-wrap: break-word;
   height: 30px;
   background-color: aquamarine;
   padding-left: 20px;
@@ -253,6 +253,7 @@ tbody {
 }
 
 .box_item_dette {
+  word-wrap: break-word;
   text-align: center;
 }
 .box_item_dette ul {
@@ -280,22 +281,166 @@ tbody {
 .option {
   width: 250px;
 }
-.option .adding {
-  width: 100%;
+
+.form_add_spending {
+  float: left;
+  width: 250px;
   height: auto;
   background-color: #f3825f;
   padding: 10px;
 }
-.option .adding input {
+.form_add_spending input {
   width: 100%;
   background: transparent;
   border: 1px solid #ffc5b2;
-  margin: 10px 0;
+  margin: 0px 0 10px 0;
   padding: 5px 10px;
   font-size: 10px;
 }
-.option .adding input[type="submit"] {
+.form_add_spending input[type="submit"] {
   cursor: pointer;
+}
+
+.form_add_user {
+  margin-left: 5px;
+  float: left;
+  width: 250px;
+  height: auto;
+  background-color: #f3825f;
+  padding: 10px;
+}
+.form_add_user input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #ffc5b2;
+  margin: 0px 0 10px 0;
+  padding: 5px 10px;
+  font-size: 10px;
+}
+.form_add_user input:placeholder-shown {
+  color: green;
+}
+.form_add_user ul {
+  font-size: 10px;
+  text-transform: capitalize;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  height: 22.3px;
+  padding: 1px 10px;
+  line-height: 22.3px;
+  margin-top: 0;
+  border: 1px solid #ffc5b2;
+  color: white;
+  cursor: pointer;
+}
+.form_add_user ul li:not(.init) {
+  display: none;
+}
+.form_add_user select {
+  display: block;
+  margin: 0 auto;
+}
+
+label {
+  font-size: 10px;
+  color: white;
+}
+
+.title_form {
+  text-align: center;
+  color: white;
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+
+.form_add_group {
+  margin-left: 5px;
+  float: left;
+  width: 250px;
+  height: auto;
+  background-color: #f3825f;
+  padding: 10px;
+}
+.form_add_group input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #ffc5b2;
+  margin: 0px 0 10px 0;
+  padding: 5px 10px;
+  font-size: 10px;
+}
+.form_add_group input:placeholder-shown {
+  color: green;
+}
+.form_add_group input[type="submit"] {
+  cursor: pointer;
+}
+.form_add_group select {
+  display: block;
+  margin: 0 auto;
+}
+
+li.name {
+  font-size: 14px;
+}
+
+li.concernes {
+  font-size: 8px;
+}
+
+li.date {
+  font-size: 10px;
+}
+
+li.price {
+  font-size: 20px;
+}
+
+li.desc {
+  font-size: 18px;
+}
+
+li.group {
+  font-size: 12px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  color: white;
+}
+
+.option_menu {
+  padding-top: 20px;
+  padding-bottom: 18px;
+}
+.option_menu ul {
+  line-height: 2;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.option_menu ul li {
+  list-style: none;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.option_menu ul li a {
+  margin-left: 14px;
+}
+
+.count_section ul li a {
+  font-family: "Lato", sans-serif;
+}
+.count_section ul li a:before {
+  margin-right: 10px;
+  font-family: "Fontawesome";
+}
+
+.toggle_menu {
+  margin-left: 59px;
+  padding-top: 28px;
 }
 
 /*# sourceMappingURL=accueil.css.map */

@@ -4,15 +4,22 @@ $col_max: 12;
   .col-#{$i}{
     width: percentage($i/$col_max);
     float:left;
-    margin: 0 15px;
+    padding: 0 15px;
   }
 }
+.row:before, .row:after {
+  display: table;
+  content: '';
+}
+.row:after {
+  clear: both;
+}
 .row{
-  &:after, :before{
-    display: table;
-    content:'';
-  }
-  &:after{
-    clear:both;
-  }
+    margin: 0 -15px;
+}
+//#col-offset-*
+@for $j from 1 through $col_max{
+    .col-offset-#{$j}{
+        margin-left: percentage($j)/$col_max;
+    }
 }
