@@ -22,26 +22,27 @@ $total-columns: 12;
 }
 body{
     //background-color: crimson!important;
-    background: linear-gradient(to right, #25c481, #25b7c4)!important;
+    background: #76BB70;//linear-gradient(to right, #25c481, #25b7c4)!important;
 }
 .col-1 {
     @include name(7);
 }
 header{
+    color: #5F6D63;
     padding:{
         right:20px;
         left:20px;
         bottom:70px;
     }
     //background-color: rgba(0,0,0,0.25);
-    color: white;
+
 }
 nav{
     display: flex;
     padding-left: 20px;
     padding-right: 20px;
     width: 400px;
-    background-color: coral;
+    background-color: #E6E7E7;
     margin: 0 auto;
     .nav-header{
         padding-top: 10px;
@@ -55,7 +56,7 @@ nav{
         .profile{
           float: left;
           border-radius: 100%;
-          border: 3px solid #FFF;
+          border: 3px solid #5F6D63;
           height: 50px;
           width: 50px;
           background-image: url('../assets/nobody_m.original.jpg');
@@ -73,23 +74,24 @@ nav{
         float: right;
         //position: absolute;
         //right: 20px;
-        &::before{
+        /*&::before{
             font-family: 'FontAwesome';
             content: '\f078';
             position: absolute;
             top: 26px;
             right: 340px;
             cursor: pointer;
-        }
-        ul{
+        }*/
+        .menu_hide{
           margin-top: 20px;
           position: absolute;
-          top: 61px;
-          right: 300px;
+          top: 70px;
+          right: 451px;
           //left: 103px;
           background: white;
           color: black;
           padding: 20px;
+          visibility:hidden;
           &::after{
             content: '';
             position: absolute;
@@ -342,107 +344,8 @@ tbody{
     }
   }
 }
-.form_add_spending{
-  float: left;
-  width: 250px;
-  height: auto;
-  background-color: rgb(243,130,95);
-  padding: 10px;
-  input{
-    width: 100%;
-    background: transparent;
-    border: 1px solid rgb(255,197,178);
-    margin: 0px 0 10px 0;
-  padding: 5px 10px;
-    font-size: 10px;
-  }
-  input[type="submit"]{
-    cursor: pointer;
-  }
-}
 
-.form_add_user{
-  margin-left: 5px;
-  float: left;
-  width: 250px;
-  height: auto;
-  background-color: rgb(243,130,95);
-  padding: 10px;
-  input{
-    width: 100%;
-    background: transparent;
-    border: 1px solid rgb(255,197,178);
-    margin: 0px 0 10px 0;
-    padding: 5px 10px;
-    font-size: 10px;
-    &:placeholder-shown{
-    color: green;
-    }
-  }
-  ul{
-    //height: 10.7334px;
-    font-size: 10px;
-    text-transform: capitalize;
-    padding: 0;
-    display: inline-block;
-    width: 100%;
-    list-style: none;
-    text-align: center;
-    height: 22.3px;
-    padding: 1px 10px;
-    //background-color: aquamarine;
-    line-height: 22.3px;
-    margin-top: 0;
-    border: 1px solid #ffc5b2;
-    color: white;
-    cursor: pointer;
-    li{
-      &:not(.init){display: none;}
-    }
-  }
 
-  select{
-    display: block;
-    margin: 0 auto;
-  }
-}
-label{
-  font-size: 10px;
-  color: white;
-}
-.title_form{
-  text-align: center;
-  color: white;
-  margin: 10px 0;
-  letter-spacing: 1px;
-}
-
-.form_add_group{
-  margin-left: 5px;
-  float: left;
-  width: 250px;
-  height: auto;
-  background-color: rgb(243,130,95);
-  padding: 10px;
-  input{
-    width: 100%;
-    background: transparent;
-    border: 1px solid rgb(255,197,178);
-    margin: 0px 0 10px 0;
-    padding: 5px 10px;
-    font-size: 10px;
-    &:placeholder-shown{
-    color: green;
-    }
-  }
-  input[type="submit"]{
-    cursor: pointer;
-  }
-  select{
-    display: block;
-    margin: 0 auto;
-  }
-}
 ////
 li.name{
   font-size: 14px;
@@ -477,8 +380,9 @@ input[type="submit"]{
     margin-bottom: 0px;
     li{
       list-style: none;
-      font-size: 10px;
+      font-size: 20px;
       text-transform: uppercase;
+      cursor: pointer;
       a{
         margin-left: 14px;
 
@@ -502,7 +406,12 @@ input[type="submit"]{
 }
 
 .toggle_menu{
-  margin-left: 59px;
+  margin-left: 57px;
   padding-top: 28px;
+  cursor: pointer;
 }
 //////
+.option_menu ul{
+  margin-left: 15px;
+  padding: 0;
+}

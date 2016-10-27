@@ -73,49 +73,53 @@ html(lang='fr')
                           //.box3
                             ul(ng-repeat="depense in depenses")
                               li {{aConcernesFinal[depense.Id]}}
-            aside
-              .add
-                  ul.tools
-                      li.adding
-                          span add
-                      li.changing
-                          span change
-                  .form_add_spending
-                    form
-                      h4.title_form Add a new spending
-                      label(for="Concernes") Concernes:
-                      input(type="text" placeholder="Concernes")
-                      label(for="Date") Date:
-                      input(type="text" placeholder="Date")
-                      label(for="Montant") Montant:
-                      input(type="text" placeholder="Montant")
-                      label(for="Description") Description:
-                      input(type="text" placeholder="Description")
-                      label(for="Group") Group:
-                      input(type="text" placeholder="Groupe")
-                      input(type="submit" value="Ajouter")
-                  .form_add_user
-                    form
-                      h4.title_form Add a new user
-                      label(for="User") User:
-                      input(type="text" placeholder="Username")
-                      label(for="Group") Group:
-                      input(type="text" placeholder="Group")
-                      ul
-                        li.init [select]
-                        li(data-value = "red") red
-                        li(data-value = "black") black
-                        li(data-value = "green") green
-                        li(data-value = "blue") blue
-                        li(data-value = "white") white
-                      input(type="submit" value="Ajouter")
-                  .form_add_group
-                    form
-                      h4.title_form Add a news
-                      label(for="Group") Group:
-                      input(type="text" placeholder="Group")
-                      label(for="Color") Color:
-                      input(type="text" placeholder="Color")
-                      label(for="Ccolor") Add a color:
-                      input(type="text" placeholder="#000000")
-                      input(type="submit" value="Ajouter")
+        #modal_spend.section
+          .add_spend.window_mod
+                .form_add_spending
+                  .close
+                    i.fa.fa-times
+                  form
+                    h4.title_form Add a new spending
+                    label(for="Concernes") Concernes:
+                    input(type="text" placeholder="Concernes")
+                    label(for="Date") Date:
+                    input(type="text" placeholder="Date")
+                    label(for="Montant") Montant:
+                    input(type="text" placeholder="Montant")
+                    label(for="Description") Description:
+                    input(type="text" placeholder="Description")
+                    label(for="Group") Group:
+                    input(type="text" placeholder="Groupe")
+                    input(type="submit" value="Ajouter")
+        #modal_user.section
+          .add_user.window_mod
+                .form_add_user
+                  .close
+                  form
+                    h4.title_form Add a new user
+                    label(for="User") User:
+                    input(type="text" placeholder="Username")
+                    label(for="Group") Group:
+                    input(type="text" placeholder="Group")
+                    ul
+                      li.init [select]
+                      li(data-value = "red") red
+                      li(data-value = "black") black
+                      li(data-value = "green") green
+                      li(data-value = "blue") blue
+                      li(data-value = "white") white
+                    input(type="submit" value="Ajouter")
+        #modal_group.section
+          .add_group.window_mod
+                .form_add_group
+                  .close
+                    i.fa.fa-times
+                  form
+                    h4.title_form Add a news
+                    label(for="Group") Group:
+                    input(type="text" placeholder="Group")
+                    label(for="Color") Color:
+                    input(type="text" placeholder="Color")
+                    label(for="Ccolor") Add a color:
+                    input(type="text" placeholder="#000000")
+                    input.submit(type="submit" value="Ajouter")

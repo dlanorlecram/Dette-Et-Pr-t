@@ -50,7 +50,7 @@ app.controller('paybackCtrl', function($scope, $http, $rootScope){
         for($user in $scope.users){
           $rootScope.aUsers[$scope.users[$user].Id] = $scope.users[$user].username;
         }
-        console.log($scope.aUser);
+        console.log($rootScope.aUsers);
 
     });
 });

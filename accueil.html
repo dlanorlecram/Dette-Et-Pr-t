@@ -87,60 +87,67 @@
           </div>
         </div>
       </section>
-      <aside>
-        <div class="add">
-          <ul class="tools">
-            <li class="adding"><span>add</span></li>
-            <li class="changing"><span>change</span></li>
-          </ul>
-          <div class="form_add_spending">
-            <form>
-              <h4 class="title_form">Add a new spending</h4>
-              <label for="Concernes">Concernes:</label>
-              <input type="text" placeholder="Concernes">
-              <label for="Date">Date:</label>
-              <input type="text" placeholder="Date">
-              <label for="Montant">Montant:</label>
-              <input type="text" placeholder="Montant">
-              <label for="Description">Description:</label>
-              <input type="text" placeholder="Description">
-              <label for="Group">Group:</label>
-              <input type="text" placeholder="Groupe">
-              <input type="submit" value="Ajouter">
-            </form>
-          </div>
-          <div class="form_add_user">
-            <form>
-              <h4 class="title_form">Add a new user</h4>
-              <label for="User">User:</label>
-              <input type="text" placeholder="Username">
-              <label for="Group">Group:</label>
-              <input type="text" placeholder="Group">
-              <ul>
-                <li class="init">[select]</li>
-                <li data-value="red">red</li>
-                <li data-value="black">black</li>
-                <li data-value="green">green</li>
-                <li data-value="blue">blue</li>
-                <li data-value="white">white</li>
-              </ul>
-              <input type="submit" value="Ajouter">
-            </form>
-          </div>
-          <div class="form_add_group">
-            <form>
-              <h4 class="title_form">Add a news</h4>
-              <label for="Group">Group:</label>
-              <input type="text" placeholder="Group">
-              <label for="Color">Color:</label>
-              <input type="text" placeholder="Color">
-              <label for="Ccolor">Add a color:</label>
-              <input type="text" placeholder="#000000">
-              <input type="submit" value="Ajouter">
-            </form>
-          </div>
+    </div>
+    <div class="section" id="modal_spend">
+      <div class="add_spend window_mod">
+        <div class="form_add_spending">
+          <div class="close"><i class="fa fa-times"></i></div>
+          <form>
+            <h4 class="title_form">Add a new spending</h4>
+            <label for="Concernes">Concernes:</label>
+            <input type="text" placeholder="Concernes">
+            <label for="Date">Date:</label>
+            <input type="text" placeholder="Date">
+            <label for="Montant">Montant:</label>
+            <input type="text" placeholder="Montant">
+            <label for="Description">Description:</label>
+            <input type="text" placeholder="Description">
+            <label for="Group">Group:</label>
+            <input type="text" placeholder="Groupe">
+            <input type="submit" value="Ajouter">
+          </form>
         </div>
-      </aside>
+      </div>
+    </div>
+    <div class="section" id="modal_user">
+      <div class="add_user window_mod">
+        <div class="form_add_user">
+          <div class="close"></div>
+          <form>
+            <h4 class="title_form">Add a new user</h4>
+            <label for="User">User:</label>
+            <input type="text" placeholder="Username">
+            <label for="Group">Group:</label>
+            <input type="text" placeholder="Group">
+            <ul>
+              <li class="init">[select]</li>
+              <li data-value="red">red</li>
+              <li data-value="black">black</li>
+              <li data-value="green">green</li>
+              <li data-value="blue">blue</li>
+              <li data-value="white">white</li>
+            </ul>
+            <input type="submit" value="Ajouter">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="modal_group">
+      <div class="add_group window_mod">
+        <div class="form_add_group">
+          <div class="close"><i class="fa fa-times"></i></div>
+          <form>
+            <h4 class="title_form">Add a news</h4>
+            <label for="Group">Group:</label>
+            <input type="text" placeholder="Group">
+            <label for="Color">Color:</label>
+            <input type="text" placeholder="Color">
+            <label for="Ccolor">Add a color:</label>
+            <input type="text" placeholder="#000000">
+            <input class="submit" type="submit" value="Ajouter">
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
