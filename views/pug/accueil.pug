@@ -7,119 +7,123 @@ html(lang='fr')
         title Dette et prêt Accueil
         link( href='public/css/styles.css', type='text/css', rel='stylesheet')
         link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
-        link( href='public/bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf')
+        link(href='public/bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf')
+
+
+    body(ng-app="myApp")
+      .wrapper(ng-controller="paybackCtrl")
+        .div(ng-controller="creditCtrl")
+          .home
+              section
+                  header
+                      nav
+                        .nav-header
+                          .profile
+                          span Hello Ronald!
+                        .option_menu
+                          ul
+                            li.fa.fa-user-plus(aria-hidden="true")
+                            li.fa.fa-users(aria-hidden="true")
+                            li.fa.fa-eur
+                        .toggle_menu.fa.fa-chevron-down
+                        .count_section
+                            ul.menu_hide
+                                li
+                                  a.fa.fa-sign-out(href="#") Logout
+                                li
+                                  a.fa.fa-cogs(href="#") My account
+                                li
+                                  a.fa.fa-info-circle(href="#" alt="About") About it!
+
+                  .row
+                    .col-10.col-offset-1
+                      //.compta
+                      //.filter
+                          ul
+                              li
+                                  a(href="#credit") Mes Prêts
+                              li
+                                  a(href="#payback") Mes Dettes
+                              li
+                                  a(href="#totaux") Totaux
+                      .historique
+                          //- .row(ng-view)
+                          .next
+                            //.box1
+                              h1 dépenses
+                                .box_item_dette
+                                    ul(ng-repeat="user in users")
+                                        li {{user.id}}
+                                        li {{user.username}}
+                                        li {{user.usergroup}}
+                                        li {{user.usercolor}}
+                            h2 dettes
+                            .box2.col-12
+                              .box_item_dette.col-3(ng-repeat="cash in depenses")
+                                  ul
+                                    li.name {{aUsers[cash.Payeur]}}
+                                    li.concernes {{aConcernesFinal[cash.Id]}}
+                                    li.date {{cash.Date}}
+                                    li.price {{cash.Montant}}€
+                                    li.desc {{cash.Description}}
+                                    li.group {{cash.usergroup}}
+                            //.box3
+                              ul(ng-repeat="depense in depenses")
+                                li {{aConcernesFinal[depense.Id]}}
+          #modal_spend.section
+            .add_spend.window_mod
+                  .form_add_spending
+                    .close
+                      i.fa.fa-times
+                    form(ng-submit = "addDepense()")
+                      h4.title_form Add a new spending
+                      label(for="Concernes") Concernes:
+                      input(type="text" placeholder="Concernes" ng-model="newDepense.Concernes")
+                      label(for="Date") Date:
+                      input(type="text" placeholder="Date" ng-model="newDepense.Date")
+                      label(for="Montant") Montant:
+                      input(type="text" placeholder="Montant" ng-model="newDepense.Montant")
+                      label(for="Description") Description:
+                      input(type="text" placeholder="Description" ng-model="newDepense.Description")
+                      label(for="Group") Group:
+                      input(type="text" placeholder="Groupe" ng-model="newDepense.usergroup")
+                      input(type="submit" value="Ajouter")
+          #modal_user.section
+            .add_user.window_mod
+                  .form_add_user
+                    .close
+                    form
+                      h4.title_form Add a new user
+                      label(for="User") User:
+                      input(type="text" placeholder="Username")
+                      label(for="Group") Group:
+                      input(type="text" placeholder="Group")
+                      ul
+                        li.init [select]
+                        li(data-value = "red") red
+                        li(data-value = "black") black
+                        li(data-value = "green") green
+                        li(data-value = "blue") blue
+                        li(data-value = "white") white
+                      input(type="submit" value="Ajouter")
+          #modal_group.section
+            .add_group.window_mod
+                  .form_add_group
+                    .close
+                      i.fa.fa-times
+                    form
+                      h4.title_form Add a news
+                      label(for="Group") Group:
+                      input(type="text" placeholder="Group")
+                      label(for="Color") Color:
+                      input(type="text" placeholder="Color")
+                      label(for="Ccolor") Add a color:
+                      input(type="text" placeholder="#000000")
+                      input.submit(type="submit" value="Ajouter")
+                        
         script(src='public/bower_components/angular/angular.js')
         script(src='public/bower_components/jquery/jquery.js')
           //script(src='public/bower_components/angular-route/angular-route.js')
         script(src='public/js/myapp.js')
         script(src='public/js/script.js')
-         //script(src='public/js/config.js')
-
-    body(ng-app="myApp")
-        .wrapper
-            section
-                header
-                    nav
-                      .nav-header
-                        .profile
-                        span Hello Ronald!
-                      .option_menu
-                        ul
-                          li.fa.fa-user-plus(aria-hidden="true")
-                          li.fa.fa-users(aria-hidden="true")
-                          li.fa.fa-eur
-                      .toggle_menu.fa.fa-chevron-down
-                      .count_section
-                          ul.menu_hide
-                              li
-                                a.fa.fa-sign-out(href="#") Logout
-                              li
-                                a.fa.fa-cogs(href="#") My account
-                              li
-                                a.fa.fa-info-circle(href="#" alt="About") About it!
-
-                .row
-                  .col-10.col-offset-1
-                    //.compta
-                    //.filter
-                        ul
-                            li
-                                a(href="#credit") Mes Prêts
-                            li
-                                a(href="#payback") Mes Dettes
-                            li
-                                a(href="#totaux") Totaux
-                    .historique(ng-controller="paybackCtrl")
-                        //- .row(ng-view)
-                        .next(ng-controller="creditCtrl")
-                          //.box1
-                            h1 dépenses
-                              .box_item_dette
-                                  ul(ng-repeat="user in users")
-                                      li {{user.id}}
-                                      li {{user.username}}
-                                      li {{user.usergroup}}
-                                      li {{user.usercolor}}
-                          h2 dettes
-                          .box2.col-12
-                            .box_item_dette.col-3(ng-repeat="cash in depenses")
-                                ul
-                                  li.name {{aUsers[cash.Payeur]}}
-                                  li.concernes {{aConcernesFinal[cash.Id]}}
-                                  li.date {{cash.Date}}
-                                  li.price {{cash.Montant}}€
-                                  li.desc {{cash.Description}}
-                                  li.group {{cash.usergroup}}
-                          //.box3
-                            ul(ng-repeat="depense in depenses")
-                              li {{aConcernesFinal[depense.Id]}}
-        #modal_spend.section
-          .add_spend.window_mod
-                .form_add_spending
-                  .close
-                    i.fa.fa-times
-                  form
-                    h4.title_form Add a new spending
-                    label(for="Concernes") Concernes:
-                    input(type="text" placeholder="Concernes")
-                    label(for="Date") Date:
-                    input(type="text" placeholder="Date")
-                    label(for="Montant") Montant:
-                    input(type="text" placeholder="Montant")
-                    label(for="Description") Description:
-                    input(type="text" placeholder="Description")
-                    label(for="Group") Group:
-                    input(type="text" placeholder="Groupe")
-                    input(type="submit" value="Ajouter")
-        #modal_user.section
-          .add_user.window_mod
-                .form_add_user
-                  .close
-                  form
-                    h4.title_form Add a new user
-                    label(for="User") User:
-                    input(type="text" placeholder="Username")
-                    label(for="Group") Group:
-                    input(type="text" placeholder="Group")
-                    ul
-                      li.init [select]
-                      li(data-value = "red") red
-                      li(data-value = "black") black
-                      li(data-value = "green") green
-                      li(data-value = "blue") blue
-                      li(data-value = "white") white
-                    input(type="submit" value="Ajouter")
-        #modal_group.section
-          .add_group.window_mod
-                .form_add_group
-                  .close
-                    i.fa.fa-times
-                  form
-                    h4.title_form Add a news
-                    label(for="Group") Group:
-                    input(type="text" placeholder="Group")
-                    label(for="Color") Color:
-                    input(type="text" placeholder="Color")
-                    label(for="Ccolor") Add a color:
-                    input(type="text" placeholder="#000000")
-                    input.submit(type="submit" value="Ajouter")
+        //script(src='public/js/config.js')

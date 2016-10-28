@@ -8,146 +8,149 @@
     <link href="public/css/styles.css" type="text/css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link href="public/bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf">
-    <script src="public/bower_components/angular/angular.js"></script>
-    <script src="public/bower_components/jquery/jquery.js">
-      <!--script(src='public/bower_components/angular-route/angular-route.js')-->
-    </script>
-    <script src="public/js/myapp.js"></script>
-    <script src="public/js/script.js">
-      <!--script(src='public/js/config.js')-->
-    </script>
   </head>
   <body ng-app="myApp">
-    <div class="wrapper">
-      <section>
-        <header>
-          <nav>
-            <div class="nav-header">
-              <div class="profile"></div><span>Hello Ronald!</span>
-            </div>
-            <div class="option_menu">
-              <ul>
-                <li class="fa fa-user-plus" aria-hidden="true"></li>
-                <li class="fa fa-users" aria-hidden="true"></li>
-                <li class="fa fa-eur"></li>
-              </ul>
-            </div>
-            <div class="toggle_menu fa fa-chevron-down"></div>
-            <div class="count_section">
-              <ul class="menu_hide">
-                <li><a class="fa fa-sign-out" href="#">Logout</a></li>
-                <li><a class="fa fa-cogs" href="#">My account</a></li>
-                <li><a class="fa fa-info-circle" href="#" alt="About">About it!</a></li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-        <div class="row">
-          <div class="col-10 col-offset-1">
-            <!--.compta-->
-            <!--.filter
-            ul
-                li
-                    a(href="#credit") Mes Prêts
-                li
-                    a(href="#payback") Mes Dettes
-                li
-                    a(href="#totaux") Totaux
-            -->
-            <div class="historique" ng-controller="paybackCtrl">
-              <div class="next" ng-controller="creditCtrl">
-                <!--.box1
-                h1 dépenses
-                  .box_item_dette
-                      ul(ng-repeat="user in users")
-                          li {{user.id}}
-                          li {{user.username}}
-                          li {{user.usergroup}}
-                          li {{user.usercolor}}
+    <div class="wrapper" ng-controller="paybackCtrl">
+      <div class="div" ng-controller="creditCtrl">
+        <div class="home">
+          <section>
+            <header>
+              <nav>
+                <div class="nav-header">
+                  <div class="profile"></div><span>Hello Ronald!</span>
+                </div>
+                <div class="option_menu">
+                  <ul>
+                    <li class="fa fa-user-plus" aria-hidden="true"></li>
+                    <li class="fa fa-users" aria-hidden="true"></li>
+                    <li class="fa fa-eur"></li>
+                  </ul>
+                </div>
+                <div class="toggle_menu fa fa-chevron-down"></div>
+                <div class="count_section">
+                  <ul class="menu_hide">
+                    <li><a class="fa fa-sign-out" href="#">Logout</a></li>
+                    <li><a class="fa fa-cogs" href="#">My account</a></li>
+                    <li><a class="fa fa-info-circle" href="#" alt="About">About it!</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </header>
+            <div class="row">
+              <div class="col-10 col-offset-1">
+                <!--.compta-->
+                <!--.filter
+                ul
+                    li
+                        a(href="#credit") Mes Prêts
+                    li
+                        a(href="#payback") Mes Dettes
+                    li
+                        a(href="#totaux") Totaux
                 -->
-                <h2>dettes</h2>
-                <div class="box2 col-12">
-                  <div class="box_item_dette col-3" ng-repeat="cash in depenses">
-                    <ul>
-                      <li class="name">{{aUsers[cash.Payeur]}}</li>
-                      <li class="concernes">{{aConcernesFinal[cash.Id]}}</li>
-                      <li class="date">{{cash.Date}}</li>
-                      <li class="price">{{cash.Montant}}€</li>
-                      <li class="desc">{{cash.Description}}</li>
-                      <li class="group">{{cash.usergroup}}</li>
-                    </ul>
+                <div class="historique">
+                  <div class="next">
+                    <!--.box1
+                    h1 dépenses
+                      .box_item_dette
+                          ul(ng-repeat="user in users")
+                              li {{user.id}}
+                              li {{user.username}}
+                              li {{user.usergroup}}
+                              li {{user.usercolor}}
+                    -->
+                    <h2>dettes</h2>
+                    <div class="box2 col-12">
+                      <div class="box_item_dette col-3" ng-repeat="cash in depenses">
+                        <ul>
+                          <li class="name">{{aUsers[cash.Payeur]}}</li>
+                          <li class="concernes">{{aConcernesFinal[cash.Id]}}</li>
+                          <li class="date">{{cash.Date}}</li>
+                          <li class="price">{{cash.Montant}}€</li>
+                          <li class="desc">{{cash.Description}}</li>
+                          <li class="group">{{cash.usergroup}}</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!--.box3
+                    ul(ng-repeat="depense in depenses")
+                      li {{aConcernesFinal[depense.Id]}}
+                    -->
                   </div>
                 </div>
-                <!--.box3
-                ul(ng-repeat="depense in depenses")
-                  li {{aConcernesFinal[depense.Id]}}
-                -->
               </div>
+            </div>
+          </section>
+        </div>
+        <div class="section" id="modal_spend">
+          <div class="add_spend window_mod">
+            <div class="form_add_spending">
+              <div class="close"><i class="fa fa-times"></i></div>
+              <form ng-submit="addDepense()">
+                <h4 class="title_form">Add a new spending</h4>
+                <label for="Concernes">Concernes:</label>
+                <input type="text" placeholder="Concernes" ng-model="newDepense.Concernes">
+                <label for="Date">Date:</label>
+                <input type="text" placeholder="Date" ng-model="newDepense.Date">
+                <label for="Montant">Montant:</label>
+                <input type="text" placeholder="Montant" ng-model="newDepense.Montant">
+                <label for="Description">Description:</label>
+                <input type="text" placeholder="Description" ng-model="newDepense.Description">
+                <label for="Group">Group:</label>
+                <input type="text" placeholder="Groupe" ng-model="newDepense.usergroup">
+                <input type="submit" value="Ajouter">
+              </form>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-    <div class="section" id="modal_spend">
-      <div class="add_spend window_mod">
-        <div class="form_add_spending">
-          <div class="close"><i class="fa fa-times"></i></div>
-          <form>
-            <h4 class="title_form">Add a new spending</h4>
-            <label for="Concernes">Concernes:</label>
-            <input type="text" placeholder="Concernes">
-            <label for="Date">Date:</label>
-            <input type="text" placeholder="Date">
-            <label for="Montant">Montant:</label>
-            <input type="text" placeholder="Montant">
-            <label for="Description">Description:</label>
-            <input type="text" placeholder="Description">
-            <label for="Group">Group:</label>
-            <input type="text" placeholder="Groupe">
-            <input type="submit" value="Ajouter">
-          </form>
+        <div class="section" id="modal_user">
+          <div class="add_user window_mod">
+            <div class="form_add_user">
+              <div class="close"></div>
+              <form>
+                <h4 class="title_form">Add a new user</h4>
+                <label for="User">User:</label>
+                <input type="text" placeholder="Username">
+                <label for="Group">Group:</label>
+                <input type="text" placeholder="Group">
+                <ul>
+                  <li class="init">[select]</li>
+                  <li data-value="red">red</li>
+                  <li data-value="black">black</li>
+                  <li data-value="green">green</li>
+                  <li data-value="blue">blue</li>
+                  <li data-value="white">white</li>
+                </ul>
+                <input type="submit" value="Ajouter">
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="modal_group">
+          <div class="add_group window_mod">
+            <div class="form_add_group">
+              <div class="close"><i class="fa fa-times"></i></div>
+              <form>
+                <h4 class="title_form">Add a news</h4>
+                <label for="Group">Group:</label>
+                <input type="text" placeholder="Group">
+                <label for="Color">Color:</label>
+                <input type="text" placeholder="Color">
+                <label for="Ccolor">Add a color:</label>
+                <input type="text" placeholder="#000000">
+                <input class="submit" type="submit" value="Ajouter">
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="section" id="modal_user">
-      <div class="add_user window_mod">
-        <div class="form_add_user">
-          <div class="close"></div>
-          <form>
-            <h4 class="title_form">Add a new user</h4>
-            <label for="User">User:</label>
-            <input type="text" placeholder="Username">
-            <label for="Group">Group:</label>
-            <input type="text" placeholder="Group">
-            <ul>
-              <li class="init">[select]</li>
-              <li data-value="red">red</li>
-              <li data-value="black">black</li>
-              <li data-value="green">green</li>
-              <li data-value="blue">blue</li>
-              <li data-value="white">white</li>
-            </ul>
-            <input type="submit" value="Ajouter">
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="section" id="modal_group">
-      <div class="add_group window_mod">
-        <div class="form_add_group">
-          <div class="close"><i class="fa fa-times"></i></div>
-          <form>
-            <h4 class="title_form">Add a news</h4>
-            <label for="Group">Group:</label>
-            <input type="text" placeholder="Group">
-            <label for="Color">Color:</label>
-            <input type="text" placeholder="Color">
-            <label for="Ccolor">Add a color:</label>
-            <input type="text" placeholder="#000000">
-            <input class="submit" type="submit" value="Ajouter">
-          </form>
-        </div>
-      </div>
+      <script src="public/bower_components/angular/angular.js"></script>
+      <script src="public/bower_components/jquery/jquery.js">
+        <!--script(src='public/bower_components/angular-route/angular-route.js')-->
+      </script>
+      <script src="public/js/myapp.js"></script>
+      <script src="public/js/script.js"></script>
+      <!--script(src='public/js/config.js')-->
     </div>
   </body>
 </html>

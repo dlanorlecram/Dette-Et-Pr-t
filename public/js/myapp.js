@@ -14,7 +14,18 @@ app.controller('creditCtrl', function($scope, $http, $rootScope){
                 $scope.aConcernesTrue = [];
                 //Le bon tableau à utiliser
                 $scope.aConcernesFinal = [];
+                $scope.newDepense = {};
+                $scope.mytxt="";
 
+                $scope.addDepense = function(){
+                  $scope.mytxt ="test";
+                  console.log($scope.mytxt);
+                  $scope.depenses.push($scope.newDepense);
+                  //Et je réinitailise mon objet
+                  $scope.newDepense = {};
+                };
+                  console.log($scope.depenses);
+                  console.log($scope.newDepense);
                 for($depense in $scope.depenses) {
                     //On crée le tableau à explorer (le split est important car il permet de rendre ce tableau exploitable pour la boucle suivante)
                     $scope.aConcernes[$depense] = $scope.depenses[$depense].Concernes.split(',');
@@ -46,11 +57,18 @@ app.controller('paybackCtrl', function($scope, $http, $rootScope){
      $http.get('db/users.json').then(function(reponse){
         $scope.users = reponse.data.records;
         $rootScope.aUsers = [];
+        $scope.newUser = {};
         //Generating array aUsers with structure [id => username]
         for($user in $scope.users){
           $rootScope.aUsers[$scope.users[$user].Id] = $scope.users[$user].username;
         }
+        //add a newUser
+        $scope.addUser = function(){
+          $scope.users.push($scope.newUser);
+          $scope.addUser = {};
+        }
+        console.log($scope.newUser);
+        //add a newUsergroup
         console.log($rootScope.aUsers);
-
     });
 });
